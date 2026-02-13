@@ -19,6 +19,7 @@ jobs:
         run: node scripts/update-traffic-readme.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           README_PATH: README.md
           HISTORY_PATH: .github/traffic/history.json

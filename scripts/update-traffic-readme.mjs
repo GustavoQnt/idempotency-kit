@@ -1,14 +1,14 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 
-const token = process.env.GITHUB_TOKEN;
+const token = process.env.TRAFFIC_TOKEN || process.env.GITHUB_TOKEN;
 const repository = process.env.GITHUB_REPOSITORY;
 const readmePath = process.env.README_PATH || "README.md";
 const historyPath = process.env.HISTORY_PATH || ".github/traffic/history.json";
 const markerStart = "<!-- TRAFFIC_START -->";
 const markerEnd = "<!-- TRAFFIC_END -->";
 
-if (!token) throw new Error("Missing GITHUB_TOKEN");
+if (!token) throw new Error("Missing TRAFFIC_TOKEN or GITHUB_TOKEN");
 if (!repository || !repository.includes("/")) {
   throw new Error("Missing or invalid GITHUB_REPOSITORY");
 }
