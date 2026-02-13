@@ -1,0 +1,37 @@
+name: Traffic Dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-traffic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update traffic history and README
+        run: node scripts/update-traffic-readme.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          README_PATH: README.md
+          HISTORY_PATH: .github/traffic/history.json
+
+      - name: Commit and push changes
+        run: |
+          if git diff --quiet; then
+            echo "No traffic changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md .github/traffic/history.json
+          git commit -m "chore: update traffic dashboard"
+          git push

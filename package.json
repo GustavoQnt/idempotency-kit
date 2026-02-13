@@ -55,7 +55,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GustavoQnt/idempotency-kit"
+    "url": "git+https://github.com/GustavoQnt/idempotency-kit.git"
   },
   "homepage": "https://github.com/GustavoQnt/idempotency-kit#readme",
   "bugs": {

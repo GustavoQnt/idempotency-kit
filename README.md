@@ -1,9 +1,23 @@
-# @gustavoqnt/idempotency-local
+# idempotency-kit
 
-[![npm version](https://img.shields.io/npm/v/%40gustavoqnt%2Fidempotency-local)](https://www.npmjs.com/package/@gustavoqnt/idempotency-local)
-[![npm downloads](https://img.shields.io/npm/dm/%40gustavoqnt%2Fidempotency-local)](https://www.npmjs.com/package/@gustavoqnt/idempotency-local)
-[![build](https://img.shields.io/badge/build-local%20verified-success)](#quality-checks)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/idempotency-kit?style=flat-square)](https://www.npmjs.com/package/idempotency-kit)
+[![npm downloads](https://img.shields.io/npm/dm/idempotency-kit?style=flat-square&color=blue)](https://www.npmjs.com/package/idempotency-kit)
+[![CI](https://img.shields.io/github/actions/workflow/status/GustavoQnt/idempotency-kit/ci.yml?branch=main&style=flat-square)](https://github.com/GustavoQnt/idempotency-kit/actions/workflows/ci.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE)
+
+<!-- TRAFFIC_START -->
+## Traffic Dashboard
+
+GitHub traffic snapshot (rolling window reported by GitHub API).
+
+Last 14 days totals: **0 views** (0 unique) and **0 clones** (0 unique).
+
+| Date | Views | Unique Views | Clones | Unique Clones |
+|---|---:|---:|---:|---:|
+| pending first workflow run | 0 | 0 | 0 | 0 |
+
+_Updated automatically: pending first workflow run_
+<!-- TRAFFIC_END -->
 
 Local-only idempotency for Node.js/TypeScript.
 
@@ -23,13 +37,13 @@ Local-only idempotency for Node.js/TypeScript.
 ## Install
 
 ```bash
-npm install @gustavoqnt/idempotency-local
+npm install idempotency-kit
 ```
 
 ## Quick Start
 
 ```ts
-import { IdempotencyLocal } from "@gustavoqnt/idempotency-local";
+import { IdempotencyLocal } from "idempotency-kit";
 
 const idem = new IdempotencyLocal({ ttlMs: 30_000 });
 
@@ -106,7 +120,7 @@ const finalKey = keyPrefix ? `${keyPrefix}:${key}` : key;
 ## Abort behavior
 
 ```ts
-import { AbortError, IdempotencyLocal, isAbortError } from "@gustavoqnt/idempotency-local";
+import { AbortError, IdempotencyLocal, isAbortError } from "idempotency-kit";
 
 const idem = new IdempotencyLocal();
 const controller = new AbortController();
