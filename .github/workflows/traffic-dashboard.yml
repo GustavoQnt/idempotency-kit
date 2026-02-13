@@ -23,6 +23,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           README_PATH: README.md
           HISTORY_PATH: .github/traffic/history.json
+          TRACKING_START_DATE: "2026-02-12"
 
       - name: Commit and push changes
         run: |

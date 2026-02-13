@@ -10,11 +10,11 @@
 
 GitHub traffic snapshot (rolling window reported by GitHub API).
 
-Last 14 days totals: **0 views** (0 unique) and **0 clones** (0 unique).
+Totals since 2026-02-12: **0 views** and **0 clones**.
 
-| Date | Views | Unique Views | Clones | Unique Clones |
-|---|---:|---:|---:|---:|
-| pending first workflow run | 0 | 0 | 0 | 0 |
+| Date | Views | Clones |
+|---|---:|---:|
+| pending first workflow run | 0 | 0 |
 
 _Updated automatically: pending first workflow run_
 <!-- TRAFFIC_END -->

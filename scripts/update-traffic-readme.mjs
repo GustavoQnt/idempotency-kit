@@ -5,6 +5,7 @@ const token = process.env.TRAFFIC_TOKEN || process.env.GITHUB_TOKEN;
 const repository = process.env.GITHUB_REPOSITORY;
 const readmePath = process.env.README_PATH || "README.md";
 const historyPath = process.env.HISTORY_PATH || ".github/traffic/history.json";
+const trackingStartDate = process.env.TRACKING_START_DATE || "";
 const markerStart = "<!-- TRAFFIC_START -->";
 const markerEnd = "<!-- TRAFFIC_END -->";
 
@@ -48,18 +49,28 @@ function sum(rows, field) {
   return rows.reduce((acc, row) => acc + (row[field] || 0), 0);
 }
 
+function normalizeDate(value) {
+  if (!value) return null;
+  const parsed = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) {
+    throw new Error(`Invalid TRACKING_START_DATE: ${value}. Use YYYY-MM-DD.`);
+  }
+  return parsed.toISOString().slice(0, 10);
+}
+
 function updateReadme(rows, generatedAtIso) {
-  const last14 = rows.slice(0, 14);
-  const totalViews = sum(last14, "views");
-  const totalUniqueViews = sum(last14, "uniqueViews");
-  const totalClones = sum(last14, "clones");
-  const totalUniqueClones = sum(last14, "uniqueClones");
+  const startDate = normalizeDate(trackingStartDate);
+  const allRows = startDate ? rows.filter((row) => row.date >= startDate) : rows;
+  const totalViews = sum(allRows, "views");
+  const totalClones = sum(allRows, "clones");
 
   const tableHeader = [
-    "| Date | Views | Unique Views | Clones | Unique Clones |",
-    "|---|---:|---:|---:|---:|",
+    "| Date | Views | Clones |",
+    "|---|---:|---:|",
   ];
-  const tableRows = last14.map((row) => `| ${row.date} | ${row.views} | ${row.uniqueViews} | ${row.clones} | ${row.uniqueClones} |`);
+  const tableRows = allRows.length
+    ? allRows.map((row) => `| ${row.date} | ${row.views} | ${row.clones} |`)
+    : ["| pending first workflow run | 0 | 0 |"];
 
   const block = [
     markerStart,
@@ -67,7 +78,9 @@ function updateReadme(rows, generatedAtIso) {
     "",
     "GitHub traffic snapshot (rolling window reported by GitHub API).",
     "",
-    `Last 14 days totals: **${totalViews} views** (${totalUniqueViews} unique) and **${totalClones} clones** (${totalUniqueClones} unique).`,
+    startDate
+      ? `Totals since ${startDate}: **${totalViews} views** and **${totalClones} clones**.`
+      : `Totals since tracking started: **${totalViews} views** and **${totalClones} clones**.`,
     "",
     ...tableHeader,
     ...tableRows,
@@ -117,9 +130,7 @@ const rows = Object.entries(history.days)
   .map(([date, metrics]) => ({
     date,
     views: metrics.views || 0,
-    uniqueViews: metrics.uniqueViews || 0,
     clones: metrics.clones || 0,
-    uniqueClones: metrics.uniqueClones || 0,
   }))
   .sort((a, b) => b.date.localeCompare(a.date));
 
