@@ -1,5 +1,5 @@
 {
-  "name": "@gustavoqnt/idempotency-local",
+  "name": "idempotency-kit",
   "version": "0.1.0",
   "description": "Local-only idempotency for Node.js: in-flight dedup + TTL result memoization.",
   "license": "MIT",
@@ -31,6 +31,27 @@
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
+  },
+  "keywords": [
+    "idempotency",
+    "deduplication",
+    "in-flight",
+    "ttl",
+    "memoization",
+    "typescript",
+    "node"
+  ],
+  "author": {
+    "name": "Breno Quintela",
+    "url": "https://github.com/GustavoQnt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GustavoQnt/idempotency-kit"
+  },
+  "homepage": "https://github.com/GustavoQnt/idempotency-kit#readme",
+  "bugs": {
+    "url": "https://github.com/GustavoQnt/idempotency-kit/issues"
   },
   "dependencies": {
     "@gustavoqnt/ttl-cache": "^0.1.0"
