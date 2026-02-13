@@ -4,11 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project follows Semantic Versioning.
 
+## [0.1.1] - 2026-02-13
+
+### Changed
+
+- Package name migrated from `@gustavoqnt/idempotency-local` to `idempotency-kit`.
+- Updated npm metadata for discoverability:
+  - expanded keywords
+  - repository/homepage/bugs links
+  - improved package description
+- Updated README install/import examples to `idempotency-kit`.
+- Added social-proof badges in README (npm version, downloads, CI, license).
+- Added automated traffic dashboard workflow and persisted traffic history.
+
 ## [0.1.0] - 2026-02-13
 
 ### Added
 
-- Initial release of `@gustavoqnt/idempotency-local`.
+- Initial release (originally published as `@gustavoqnt/idempotency-local`).
 - Core idempotency API:
   - `run`
   - `runWithMeta`
@@ -42,4 +55,5 @@ The format is based on Keep a Changelog, and this project follows Semantic Versi
   - Benchmark documentation in `BENCHMARK.md`
 - Benchmark suite via `npm run bench`.
 
-[0.1.0]: https://www.npmjs.com/package/@gustavoqnt/idempotency-local
+[0.1.1]: https://www.npmjs.com/package/idempotency-kit
+[0.1.0]: https://www.npmjs.com/package/idempotency-kit

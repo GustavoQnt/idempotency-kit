@@ -1,6 +1,6 @@
 {
   "name": "idempotency-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Idempotency toolkit for Node.js and TypeScript with in-flight request deduplication and TTL response caching.",
   "license": "MIT",
   "type": "module",
@@ -62,7 +62,7 @@
     "url": "https://github.com/GustavoQnt/idempotency-kit/issues"
   },
   "dependencies": {
-    "@gustavoqnt/ttl-cache": "^0.1.0"
+    "@gustavoqnt/ttl-cache": "^0.1.1"
   },
   "devDependencies": {
     "@types/node": "^22.13.8",
