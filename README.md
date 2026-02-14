@@ -14,9 +14,10 @@ Totals since 2026-02-12: **0 views** and **0 clones**.
 
 | Date | Views | Clones |
 |---|---:|---:|
-| pending first workflow run | 0 | 0 |
+| 2026-02-13 | 0 | 0 |
+| 2026-02-12 | 0 | 0 |
 
-_Updated automatically: 2026-02-13T22:10:59.514Z_
+_Updated automatically: 2026-02-14T04:52:48.076Z_
 <!-- TRAFFIC_END -->
 
 Local-only idempotency for Node.js/TypeScript.
