@@ -28,9 +28,12 @@
   "scripts": {
     "build": "tsup",
     "bench": "vitest bench --run",
+    "bench:latency": "node benchmark/realistic-latency.mjs",
+    "bench:latency:quick": "node benchmark/realistic-latency.mjs --quick",
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run --exclude test/stress.long.test.ts",
+    "test:stress": "vitest run test/stress.long.test.ts"
   },
   "keywords": [
     "idempotency",
