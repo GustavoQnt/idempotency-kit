@@ -10,14 +10,16 @@
 
 GitHub traffic snapshot (rolling window reported by GitHub API).
 
-Totals since 2026-02-12: **38 views** and **183 clones**.
+Totals since 2026-02-12: **75 views** and **247 clones**.
 
 | Date | Views | Clones |
 |---|---:|---:|
+| 2026-02-15 | 17 | 34 |
+| 2026-02-14 | 20 | 30 |
 | 2026-02-13 | 38 | 183 |
 | 2026-02-12 | 0 | 0 |
 
-_Updated automatically: 2026-02-15T05:03:17.903Z_
+_Updated automatically: 2026-02-16T05:11:49.402Z_
 <!-- TRAFFIC_END -->
 
 Local-only idempotency for Node.js/TypeScript.
