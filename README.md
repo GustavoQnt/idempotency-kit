@@ -10,10 +10,11 @@
 
 GitHub traffic snapshot (rolling window reported by GitHub API).
 
-Totals since 2026-02-12: **117 views** and **406 clones**.
+Totals since 2026-02-12: **117 views** and **427 clones**.
 
 | Date | Views | Clones |
 |---|---:|---:|
+| 2026-02-26 | 0 | 21 |
 | 2026-02-25 | 0 | 18 |
 | 2026-02-24 | 3 | 11 |
 | 2026-02-23 | 0 | 13 |
@@ -29,7 +30,7 @@ Totals since 2026-02-12: **117 views** and **406 clones**.
 | 2026-02-13 | 38 | 183 |
 | 2026-02-12 | 0 | 0 |
 
-_Updated automatically: 2026-02-27T04:57:20.641Z_
+_Updated automatically: 2026-02-28T04:33:58.175Z_
 <!-- TRAFFIC_END -->
 
 Local-only idempotency for Node.js/TypeScript.
