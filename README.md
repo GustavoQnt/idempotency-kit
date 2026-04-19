@@ -80,7 +80,7 @@ Totals since 2026-02-12: **148 views** and **1043 clones**.
 | 2026-02-13 | 38 | 183 |
 | 2026-02-12 | 0 | 0 |
 
-_Updated automatically: 2026-04-18T05:17:43.083Z_
+_Updated automatically: 2026-04-19T05:37:06.058Z_
 <!-- TRAFFIC_END -->
 
 Local-only idempotency for Node.js/TypeScript.
