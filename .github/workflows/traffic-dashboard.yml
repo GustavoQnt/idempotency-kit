@@ -2,8 +2,8 @@ name: Traffic Dashboard
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "15 3 * * *"
+  # schedule:
+  #   - cron: "20 3 * * *"
 
 permissions:
   contents: write
